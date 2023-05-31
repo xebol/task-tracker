@@ -6,7 +6,7 @@
 <script>
   export default {
     /* eslint-disable */
-    name: 'Button',
+    name: "Button",
     props: {
       text: String,
       color: String

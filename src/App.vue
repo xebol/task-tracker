@@ -1,25 +1,35 @@
 <template>
   <div class="container">
     <Header title="Task Tracker"/>
+    <Tasks @delete-task="deleteTask" v-bind:tasks="tasks"/>
   </div>
 </template>
 
 
 <script>
 import Header from './components/Header';
+import Tasks from './components/Tasks';
 
 
 export default {
-  //define component here
+  //Register component here
   name: 'App',
   components: {
-    Header
+    Header,
+    Tasks
   }, 
   data() {
     return {
       tasks: [],
     }
   }, 
+  methods: {
+    deleteTask(id) {
+      if(confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id)
+      }
+    }
+  },
   created() {
     this.tasks = [
       {

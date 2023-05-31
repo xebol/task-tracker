@@ -11,7 +11,7 @@ import Button from './Button';
 
 export default {
   /* eslint-disable */
-  name: 'Header',
+  name: "Header",
   props: {
     title: String
   },
