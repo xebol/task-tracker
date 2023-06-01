@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker"/>
-    <Tasks @delete-task="deleteTask" v-bind:tasks="tasks"/>
+    <!-- Use component here -->
+    <Header title="Task Tracker" />
+    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" v-bind:tasks="tasks" />
   </div>
 </template>
 
@@ -17,40 +18,43 @@ export default {
   components: {
     Header,
     Tasks
-  }, 
+  },
   data() {
     return {
       tasks: [],
-    }
-  }, 
+    };
+  },
   methods: {
     deleteTask(id) {
-      if(confirm("Are you sure?")) {
-        this.tasks = this.tasks.filter((task) => task.id !== id)
+      if (confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
       }
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task);
     }
   },
   created() {
     this.tasks = [
       {
-      id: 1,
-      text: "Doctor's Appointment",
-      day: "March 1st at 2:30pm", 
-      reminder: true
-    },
-    {
-      id: 2,
-      text: "Meeting at School",
-      day: "March 3rd at 1:30pm", 
-      reminder: true
-    },
-    {
-      id: 3,
-      text: "Food Shopping",
-      day: "March 3rd at 11:00am", 
-      reminder: false
-    }
-  ]
+        id: 1,
+        text: "Doctor's Appointment",
+        day: "March 1st at 2:30pm",
+        reminder: true
+      },
+      {
+        id: 2,
+        text: "Meeting at School",
+        day: "March 3rd at 1:30pm",
+        reminder: true
+      },
+      {
+        id: 3,
+        text: "Food Shopping",
+        day: "March 3rd at 11:00am",
+        reminder: false
+      }
+    ];
   }
 };
 </script>

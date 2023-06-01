@@ -1,9 +1,9 @@
 <template>
   <!-- add ternary to conditionally render style -->
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
     <h3>
       {{ task.text }}
-      <i @click="onDelete(task.id)" class="fas fa-times"></i>
+      <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
     </h3>
     <p>{{ task.day }}
     </p>
@@ -18,12 +18,12 @@ export default {
   props: {
     task: Object
   },
-  methods: {
-    onDelete(id) {
-      //emit custom event to App component. Emit works one level at a time
-      this.$emit('delete-task', id)
-    }
-  }
+  // methods: {
+  //   onDelete(id) {
+  //     //emit custom event to App component. Emit works one level at a time
+  //     this.$emit('delete-task', id)
+  //   }
+  // }
 };
 </script>
 
