@@ -14,7 +14,7 @@
     methods: {
       // adding a method when an event is defined
       onClick() {
-        this.$emit('toggle-add-task')
+        this.$emit('btn-click')
       }
     }
   }
