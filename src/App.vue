@@ -6,6 +6,8 @@
       <AddTask @add-task="addTask" />
     </div>
     <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" v-bind:tasks="tasks" />
+    <router-view> </router-view>
+    <Footer />
   </div>
 </template>
 
@@ -14,6 +16,7 @@
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import Footer from './components/Footer';
 
 
 export default {
@@ -21,6 +24,7 @@ export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     Tasks,
     AddTask
   },
@@ -41,31 +45,31 @@ export default {
           'Content-type': 'application/json',
         },
         body: JSON.stringify(task)
-      })
-      const data = await res.json()
+      });
+      const data = await res.json();
       this.tasks = [...this.tasks, data];
     },
     async deleteTask(id) {
       if (confirm("Are you sure?")) {
         const res = await fetch(`api/tasks/${id}`, {
           method: 'DELETE'
-        })
-        res.status === 200 ? (this.tasks = this.tasks.filter((task) => task.id !== id)) : alert("Error deleting task.")
+        });
+        res.status === 200 ? (this.tasks = this.tasks.filter((task) => task.id !== id)) : alert("Error deleting task.");
       }
     },
     async toggleReminder(id) {
-      const taskToToggle = await this.fetchTask(id)
-      const updateTask = {...taskToToggle, reminder: !taskToToggle.reminder}
-    
+      const taskToToggle = await this.fetchTask(id);
+      const updateTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+
       const res = await fetch(`api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json',
         },
         body: JSON.stringify(updateTask)
-      })
+      });
 
-      const data = await res.json()
+      const data = await res.json();
 
       this.tasks = this.tasks.map((task) => task.id === id ? { ...task, reminder: data.reminder } : task);
     },
