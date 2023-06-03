@@ -9,7 +9,7 @@
     {
       "text": "Check in for flight",
       "day": "Sunday, 12:00pm",
-      "reminder": false,
+      "reminder": true,
       "id": 71803
     }
   ]
