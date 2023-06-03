@@ -2,9 +2,9 @@
 A simple multipage app built with VueJS on the frontend while leveraging json-server as the backend. It allows user to add and remove tasks. A user can also toggle a particular task by double clicking it to set the reminder. 
 
 # Final Product 
-!["Add a task by clicking the 'Add Task' button."](#)
-!["Homepage shows all the current tasks."](#)
-!["When the 'About' link is clicked user is redirected to the About page."](#)
+!["Add a task by clicking the 'Add Task' button."](https://github.com/xebol/task-tracker/blob/main/docs/Screenshot%202023-06-03%20at%201.43.28%20PM.png?raw=true)
+!["Homepage shows all the current tasks."](https://github.com/xebol/task-tracker/blob/main/docs/Screenshot%202023-06-03%20at%201.43.56%20PM.png?raw=true)
+!["When the 'About' link is clicked user is redirected to the About page."](https://github.com/xebol/task-tracker/blob/main/docs/Screenshot%202023-06-03%20at%201.42.44%20PM.png?raw=true)
 
 ## Project Setup
 1. Fork and clone the repo.
