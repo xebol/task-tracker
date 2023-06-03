@@ -14,3 +14,8 @@ A simple multipage app built with VueJS on the frontend while leveraging json-se
 ## Dependencies
 - json-server
 - vue router
+
+
+
+##### Credits
+- Source code from: https://github.com/bradtraversy/vue-crash-2021 copied for learning purposes.
