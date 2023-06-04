@@ -1,5 +1,5 @@
 # Task Tracker
-A simple multipage app built with VueJS on the frontend while leveraging json-server as the backend. It allows user to add and remove tasks. A user can also toggle a particular task by double clicking it to set the reminder. 
+A simple multipage app is built with VueJS on the frontend while leveraging json-server as the backend. It allows users to add and remove tasks. Users can also toggle a particular task by double-clicking it to set the reminder.
 
 # Final Product 
 !["Add a task by clicking the 'Add Task' button."](https://github.com/xebol/task-tracker/blob/main/docs/Screenshot%202023-06-03%20at%201.43.28%20PM.png?raw=true)

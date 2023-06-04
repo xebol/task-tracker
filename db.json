@@ -17,6 +17,12 @@
       "day": "Tuesday, 5pm",
       "reminder": false,
       "id": 3
+    },
+    {
+      "text": "Drive to Calgary",
+      "day": "Monday, 9:30am",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
